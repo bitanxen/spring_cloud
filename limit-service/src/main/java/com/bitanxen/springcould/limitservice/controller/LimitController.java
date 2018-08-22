@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bitanxen.springcould.limitservice.config.PropConfig;
 import com.bitanxen.springcould.limitservice.model.LimitConfiguration;
 
 @RestController
