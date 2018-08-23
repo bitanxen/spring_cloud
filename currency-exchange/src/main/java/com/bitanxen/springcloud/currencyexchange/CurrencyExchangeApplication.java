@@ -1,12 +1,12 @@
-package com.bitanxen.springcould.limitservice;
+package com.bitanxen.springcloud.currencyexchange;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LimitServiceApplication {
+public class CurrencyExchangeApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LimitServiceApplication.class, args); 
-	} 
+		SpringApplication.run(CurrencyExchangeApplication.class, args);
+	}
 }

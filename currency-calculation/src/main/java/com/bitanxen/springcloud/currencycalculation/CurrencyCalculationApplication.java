@@ -1,12 +1,12 @@
-package com.bitanxen.springcould.limitservice;
+package com.bitanxen.springcloud.currencycalculation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LimitServiceApplication {
+public class CurrencyCalculationApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LimitServiceApplication.class, args); 
-	} 
+		SpringApplication.run(CurrencyCalculationApplication.class, args);
+	}
 }
