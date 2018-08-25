@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,8 @@ import com.bitanxen.springcloud.currencycalculation.proxy.CurrencyExchangeProxy;
 
 @RestController
 public class CalculationController {
+	
+	private static final Logger log = LoggerFactory.getLogger(CalculationController.class);
 	
 	@Autowired
 	private CurrencyExchangeProxy exchangeProxy;	
@@ -35,11 +39,8 @@ public class CalculationController {
 	
 	@GetMapping("/currency_converter_feign/{from}/{to}/{amount}")
 	public CurrencyConversion calculateCurrencyWithFeign(@PathVariable String from, @PathVariable String to, @PathVariable BigDecimal amount) {
-		
-		System.out.println(from+" "+to);
-		
 		CurrencyConversion conversion = exchangeProxy.retiveExchangeValue(from, to);
-		
+		log.info("{}", conversion);
 		return new CurrencyConversion(conversion.getId(), from, to, amount, conversion.getRate(), amount.multiply(conversion.getRate()));
 	}
 }
